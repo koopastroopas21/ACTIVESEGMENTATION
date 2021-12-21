@@ -23,12 +23,12 @@ public class Database_Init_Del {
             String query="PRAGMA foreign_keys = ON";
             Statement lock=conn.createStatement();
             lock.execute(query);
-            createVtable(lock);
             createILtable(lock);
             createVLtable(lock);
+            createFVtable(lock);
             createCLtable(lock);
             createFNtable(lock);
-            createFVtable(lock);
+            createVtable(lock);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
